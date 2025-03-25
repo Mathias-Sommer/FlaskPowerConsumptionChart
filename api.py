@@ -23,6 +23,8 @@ def get_forbrug_api():
                 'tidligere_uge_forbrug': row.get('tidligere_uge_forbrug'),
                 'date': row.get('date')
             })
+
+        response_extracted.sort(key=lambda x: x['id']) #sorter fra A-Z på ID.
         return response_extracted
     else:
         return {
