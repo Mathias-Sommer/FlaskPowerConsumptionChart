@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../static/script.js"></script>
+    <title>{% block title %}EL Forbrug{% endblock %}</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="navbar">
+          <nav>
+            <ul>
+              <a href="{{ url_for('home') }}"
+                ><button class="navbar-button">Hjem</button>
+              </a>
+              <a href="{{ url_for('forbrugsrapport') }}"
+                ><button class="navbar-button">Forbrugsrapport</button>
+              </a>
+              <a href="{{ url_for('grafer') }}"
+                ><button class="navbar-button">Grafer</button>
+              </a>
+              <a href="{{ url_for('login') }}">
+                <button class="navbar-button">Login</button>
+              </a>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <main>
+      <h2 class="main-header">{% block page_title %}Hjem{% endblock %}</h2>
+      <div class="main-container">
+        {% block content %}
+        <div class="base-content">
+          <h1>Her kan du se dit daglige forbrug</h1>
+          <p>Der bliver dagligt sendt en email til mathias@ms-bytes.dk.</p>
+          <p />
+          <p>Denne email indeholder en oversigt over dit forbrug af strøm.</p>
+          <br />
+          <p>Du kan også se dit forbrug på denne hjemmeside.</p>
+          <br />
+          <p>For at se forbrugsrapporten, gå ind på fanen forbrugsrapport.</p>
+        </div>
+
+        {% endblock %}
+      </div>
+    </main>
+  </body>
+</html>

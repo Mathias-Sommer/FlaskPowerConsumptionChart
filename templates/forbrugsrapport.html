@@ -1,0 +1,29 @@
+{% extends 'base.html' %} {% block title %}Forbrugsrapport{% endblock %} {%
+block page_title %}Forbrugsrapport{% endblock %} {% block content %}
+
+<div>
+  <div>
+    <!-- Data Table -->
+    <table border="1" class="table-forbrugsrapport">
+      <thead>
+        <tr>
+          <th>Dato</th>
+          <th>Forbrug (kWh)</th>
+          <th>Data kilde</th>
+        </tr>
+      </thead>
+      <tbody id="data-table">
+        <!-- Data will be injected here -->
+        {% for entry in data %}
+        <tr>
+          <td>{{ entry.date or "N/A" }}</td>
+          <td>{{ entry.uge_forbrug or "N/A" }}</td>
+          <td>{{ entry.data_source or "N/A" }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{% endblock %}
