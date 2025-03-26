@@ -1,6 +1,18 @@
 {% extends 'base.html' %} {% block title %}Login{% endblock %} {% block
 page_title %}Login{% endblock %} {% block content %}
-<div>
-  <h1>Test login</h1>
+<div class="base-content">
+  <div class="login-container">
+    <form>
+      <div class="input-group">
+        <p>Navn</p>
+        <input type="email" placeholder="Navn" required />
+      </div>
+      <div class="input-group">
+        <p>Adgangskode</p>
+        <input type="password" placeholder="Adgangskode" required />
+      </div>
+      <button class="login-btn">Log ind</button>
+    </form>
+  </div>
 </div>
 {% endblock %}
