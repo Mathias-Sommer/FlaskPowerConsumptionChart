@@ -21,10 +21,6 @@ def forbrugsrapport():
 def grafer():
     return render_template('grafer.html')
 
-@app.route('/login')
-def login():
-    return render_template('login.html')
-
 @app.route("/get_data", methods=["GET"])
 def GET_DATA():
     data = get_forbrug_api()
