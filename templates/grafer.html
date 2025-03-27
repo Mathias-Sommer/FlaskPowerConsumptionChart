@@ -1,6 +1,30 @@
 {% extends 'base.html' %} {% block title %}Grafer{% endblock %} {% block
 page_title %}Grafer{% endblock %} {% block content %}
-<div>
-  <h1>Test grafer</h1>
-</div>
+<canvas id="myChart" width="400" height="200"></canvas>
+
+<script>
+  async function fetchChartData() {
+    const response = await fetch("/chart-data");
+    const data = await response.json();
+    return data;
+  }
+
+  async function renderChart() {
+    const chartData = await fetchChartData();
+
+    const ctx = document.getElementById("myChart").getContext("2d");
+    new Chart(ctx, {
+      type: "line", // Change to 'line', 'pie', etc.
+      data: chartData,
+      options: {
+        responsive: true,
+        scales: {
+          y: { beginAtZero: true },
+        },
+      },
+    });
+  }
+
+  renderChart();
+</script>
 {% endblock %}

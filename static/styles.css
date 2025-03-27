@@ -158,3 +158,11 @@ main h2 {
   color: white;
   text-transform: uppercase;
 }
+
+canvas {
+  width: 100% !important; /* Make it responsive */
+  max-width: 1200px; /* Restrict width */
+  max-height: 1200px; /* Restrict height */
+  display: block; /* Prevent extra spaces */
+  margin: auto; /* Center it */
+}

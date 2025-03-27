@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
     <script src="../static/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>{% block title %}EL Forbrug{% endblock %}</title>
   </head>
   <body>
@@ -25,9 +26,6 @@
               </a>
               <a href="{{ url_for('grafer') }}"
                 ><button class="navbar-button">Grafer</button>
-              </a>
-              <a href="{{ url_for('login') }}">
-                <button class="navbar-button">Login</button>
               </a>
             </ul>
           </nav>
