@@ -1,7 +1,7 @@
 import requests, os
 from flask import jsonify
 
-url = 'https://oxhcuvzcbzfpsiujftzq.supabase.co/rest/v1/electricity_usage'
+URL = os.environ.get("API_URL")
 API_KEY = os.environ.get("API_KEY")
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
@@ -33,7 +33,7 @@ def get_forbrug_api():
         }
 
 def data_for_chart():
-    response = requests.get(url, headers=header)
+    response = requests.get(URL, headers=header)
     
     if response.status_code == 200:
         data = response.json()
